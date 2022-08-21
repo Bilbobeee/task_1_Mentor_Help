@@ -40,7 +40,9 @@ public class Main {
 
                 sum = sum + ukrainian.alphabet(nameSplit[i].substring(a,a+1).toLowerCase());
 
-                if (sum==0){
+                if (sum!=0){
+                    a++;
+                } else {
                     sum = sum + russian.alphabet(nameSplit[i].substring(a,a+1).toLowerCase());
 
                     if(sum==0){

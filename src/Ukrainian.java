@@ -3,53 +3,46 @@ import java.util.TreeMap;
 
 public class Ukrainian {
 
-    private TreeMap<Integer,String> ukrainian = new TreeMap<>();
+    private TreeMap<String,Integer> ukrainian = new TreeMap<>();
 
     {
-        ukrainian.put(1, "а");
-        ukrainian.put(2, "б");
-        ukrainian.put(3, "в");
-        ukrainian.put(4, "г");
-        ukrainian.put(5, "д");
-        ukrainian.put(6, "е");
-        ukrainian.put(7, "ё");
-        ukrainian.put(8, "ж");
-        ukrainian.put(9, "з");
-        ukrainian.put(10, "и");
-        ukrainian.put(11, "й");
-        ukrainian.put(12, "к");
-        ukrainian.put(13, "л");
-        ukrainian.put(14, "м");
-        ukrainian.put(15, "н");
-        ukrainian.put(16, "о");
-        ukrainian.put(17, "п");
-        ukrainian.put(18, "р");
-        ukrainian.put(19, "с");
-        ukrainian.put(20, "т");
-        ukrainian.put(21, "у");
-        ukrainian.put(22, "ф");
-        ukrainian.put(23, "х");
-        ukrainian.put(24, "ц");
-        ukrainian.put(25, "ч");
-        ukrainian.put(26, "ш");
-        ukrainian.put(27, "щ");
-        ukrainian.put(28, "ъ");
-        ukrainian.put(29, "ы");
-        ukrainian.put(30, "ь");
-        ukrainian.put(31, "э");
-        ukrainian.put(32, "ю");
-        ukrainian.put(33, "я");
+        ukrainian.put("а",1);
+        ukrainian.put("б",2);
+        ukrainian.put("в",3);
+        ukrainian.put("г",4);
+        ukrainian.put("ґ",5);
+        ukrainian.put("д",6);
+        ukrainian.put("е",7);
+        ukrainian.put("є",8);
+        ukrainian.put("ж",9);
+        ukrainian.put("з",10);
+        ukrainian.put("и",11);
+        ukrainian.put("і",12);
+        ukrainian.put("ї",13);
+        ukrainian.put("й",14);
+        ukrainian.put("к",15);
+        ukrainian.put("л",16);
+        ukrainian.put("м",17);
+        ukrainian.put("н",18);
+        ukrainian.put("о",19);
+        ukrainian.put("п",20);
+        ukrainian.put("р",21);
+        ukrainian.put("с",22);
+        ukrainian.put("т",23);
+        ukrainian.put("у",24);
+        ukrainian.put("ф",25);
+        ukrainian.put("х",26);
+        ukrainian.put("ц",27);
+        ukrainian.put("ч",28);
+        ukrainian.put("ш",29);
+        ukrainian.put("щ",30);
+        ukrainian.put("ь",31);
+        ukrainian.put("ю",32);
+        ukrainian.put("я",33);
+
     }
 
     public Integer alphabet(String letter){
-        int result = 0;
-
-        for (Map.Entry<Integer, String> cell : ukrainian.entrySet()) {
-            if (letter.equals(cell.getValue())){
-                result = cell.getKey();
-            }
-        }
-
-        return result;
+        return ukrainian.getOrDefault(letter,0);
     }
 }

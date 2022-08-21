@@ -3,48 +3,40 @@ import java.util.TreeMap;
 
 public class English {
 
-    private TreeMap<Integer,String> english = new TreeMap<>();
+    private TreeMap<String,Integer> english = new TreeMap<>();
 
     {
-        english.put(1,"a");
-        english.put(2,"b");
-        english.put(3,"c");
-        english.put(4,"d");
-        english.put(5,"e");
-        english.put(6,"f");
-        english.put(7,"g");
-        english.put(8,"h");
-        english.put(9,"i");
-        english.put(10,"j");
-        english.put(11,"k");
-        english.put(12,"l");
-        english.put(13,"m");
-        english.put(14,"n");
-        english.put(15,"o");
-        english.put(16,"p");
-        english.put(17,"q");
-        english.put(18,"r");
-        english.put(19,"s");
-        english.put(20,"t");
-        english.put(21,"u");
-        english.put(22,"v");
-        english.put(23,"w");
-        english.put(24,"x");
-        english.put(25,"y");
-        english.put(26,"z");
+        english.put("a",1);
+        english.put("b",2);
+        english.put("c",3);
+        english.put("d",4);
+        english.put("e",5);
+        english.put("f",6);
+        english.put("g",7);
+        english.put("h",8);
+        english.put("i",9);
+        english.put("j",10);
+        english.put("k",11);
+        english.put("l",12);
+        english.put("m",13);
+        english.put("n",14);
+        english.put("o",15);
+        english.put("p",16);
+        english.put("q",17);
+        english.put("r",18);
+        english.put("s",19);
+        english.put("t",20);
+        english.put("u",21);
+        english.put("v",22);
+        english.put("w",23);
+        english.put("x",24);
+        english.put("y",25);
+        english.put("z",26);
 
     }
 
     public Integer alphabet(String letter){
-        int result = 0;
-
-        for (Map.Entry<Integer, String> cell : english.entrySet()) {
-            if (letter.equals(cell.getValue())){
-                result = cell.getKey();
-            }
-        }
-
-        return result;
+        return english.getOrDefault(letter,0);
     }
 
 }
