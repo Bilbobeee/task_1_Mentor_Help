@@ -1,6 +1,11 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Main {
 
@@ -27,32 +32,14 @@ public class Main {
             e.printStackTrace();
         }
 
+        Languages language = new DetectLanguage().determine(fullName);
+
         String[] nameSplit = fullName.split(" ");
-        int sum = 0;
-
-        int split = nameSplit.length;
-        int doneSum = 0;
 
 
-        for (int i = 0; i < nameSplit.length; i++){
+        NumericalMatches numericalMatches = new NumericalMatches(fullName,language);
+        int doneSum = numericalMatches.calculation();
 
-            for (int a = 0; a < nameSplit[i].length(); a++){
-
-                sum = sum + ukrainian.alphabet(nameSplit[i].substring(a,a+1).toLowerCase());
-
-                if (sum!=0){
-                    a++;
-                } else {
-                    sum = sum + russian.alphabet(nameSplit[i].substring(a,a+1).toLowerCase());
-
-                    if(sum==0){
-                        sum = sum + english.alphabet(nameSplit[i].substring(a,a+1).toLowerCase());
-                    }
-                }
-                doneSum = doneSum + sum;
-                sum = 0;
-            }
-        }
 
         System.out.println("Фамилия: " + nameSplit[0] + "\nИмя: " + nameSplit[1] + "\nОтчество: " + nameSplit[2]
         + "\nЧисловое соответствие: " + doneSum+"\n");

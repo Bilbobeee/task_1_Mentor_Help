@@ -1,9 +1,13 @@
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Ukrainian {
+public class Ukrainian extends Language {
 
     private TreeMap<String,Integer> ukrainian = new TreeMap<>();
+
+    public TreeMap<String, Integer> getUkrainian() {
+        return ukrainian;
+    }
 
     {
         ukrainian.put("а",1);
@@ -41,7 +45,7 @@ public class Ukrainian {
         ukrainian.put("я",33);
 
     }
-
+@Override
     public Integer alphabet(String letter){
         return ukrainian.getOrDefault(letter,0);
     }

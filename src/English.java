@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.TreeMap;
 
-public class English {
+public class English extends Language {
 
     private TreeMap<String,Integer> english = new TreeMap<>();
 
@@ -35,6 +35,8 @@ public class English {
 
     }
 
+
+@Override
     public Integer alphabet(String letter){
         return english.getOrDefault(letter,0);
     }

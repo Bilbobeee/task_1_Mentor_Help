@@ -1,7 +1,7 @@
 import java.util.Map;
 import java.util.TreeMap;
 
-public class Russian {
+public class Russian extends Language{
 
     private TreeMap<String,Integer> russian = new TreeMap<>();
 
@@ -40,7 +40,7 @@ public class Russian {
         russian.put("ю",32);
         russian.put("я",33);
     }
-
+@Override
     public Integer alphabet(String letter){
         return russian.getOrDefault(letter,0);
     }
