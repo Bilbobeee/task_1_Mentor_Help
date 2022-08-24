@@ -1,17 +1,16 @@
 public class NumericalMatches implements FindNumericalMatches{
     private String fullName;
+    public LanguageBook languageBook;
 
-    public Language language;
-
-    public NumericalMatches(String fullName,Enum languageEnum) {
+    public NumericalMatches(String fullName,Language languageEnum) {
         this.fullName = fullName;
 
-        if (languageEnum.equals(Languages.UKRAINIAN)){
-            language = new Ukrainian();
-        } else if (languageEnum.equals(Languages.RUSSIAN)){
-            language = new Russian();
-        } else if (languageEnum.equals(Languages.ENGLISH)){
-            language = new English();
+        if (languageEnum.equals(Language.UKRAINIAN)){
+            languageBook = new Ukrainian();
+        } else if (languageEnum.equals(Language.RUSSIAN)){
+            languageBook = new Russian();
+        } else if (languageEnum.equals(Language.ENGLISH)){
+            languageBook = new English();
         }
     }
 
@@ -19,20 +18,15 @@ public class NumericalMatches implements FindNumericalMatches{
     @Override
     public Integer calculation() {
 
-        String[] nameSplit = fullName.split(" ");
+        String name = fullName.replaceAll(" ","").toLowerCase();
+
         int sum = 0;
 
-
-        for (int i = 0; i < nameSplit.length; i++){
-
-            for (int a = 0; a < nameSplit[i].length(); a++){
-
-                sum = sum + language.alphabet(nameSplit[i].substring(a,a+1).toLowerCase());
-
-            }
-
+        for (int i = 0; i < name.length(); i++){
+            sum = sum + languageBook.alphabet(String.valueOf(name.charAt(i)));
         }
 
         return sum;
     }
 }
+

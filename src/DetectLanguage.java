@@ -2,36 +2,33 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class DetectLanguage implements DefineLanguage{
+    private Pattern pattern;
     private Matcher matcher;
-    private Languages languages;
+    private Language language;
+    private String[] patternLanguageString = {"[ґєіїьҐЄІЇЬ]","[а-яА-Я]","[a-zA-Z]"};
+
     @Override
-    public Languages determine(String fullName) {
+    public Language determine(String fullName) {
 
-        Pattern patternUa = Pattern.compile("[ґєіїьҐЄІЇЬ]");
-        matcher = patternUa.matcher(fullName);
-        boolean ukrainianLanguage = matcher.find();
+        for (int i = 0; i < 3; i++){
 
-        if (!ukrainianLanguage){
-            Pattern patternRus = Pattern.compile("[а-яА-Я]");
-            matcher = patternRus.matcher(fullName);
-            boolean russianLanguage = matcher.find();
+            pattern = Pattern.compile(patternLanguageString[i]);
+            matcher = pattern.matcher(fullName);
 
-            if (!russianLanguage){
-                Pattern patternEng = Pattern.compile("[a-zA-Z]");
-                matcher = patternEng.matcher(fullName);
-                boolean englishLanguage = matcher.find();
-                if (englishLanguage){
-                    languages = Languages.ENGLISH;
+            if (matcher.find()){
+                switch (i){
+                    case 0 : language = Language.UKRAINIAN;
+                    break;
+                    case 1 : language = Language.RUSSIAN;
+                    break;
+                    case 2 : language = Language.ENGLISH;
+                    break;
                 }
-
-            } else {
-                languages = Languages.RUSSIAN;
+                break;
             }
 
-        } else {
-            languages = Languages.UKRAINIAN;
         }
 
-        return languages;
+        return language;
     }
 }

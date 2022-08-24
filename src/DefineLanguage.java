@@ -1,3 +1,3 @@
 public interface DefineLanguage {
-    public abstract Languages determine(String fullName);
+    public abstract Language determine(String fullName);
 }

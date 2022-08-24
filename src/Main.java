@@ -1,11 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Main {
 
@@ -32,7 +27,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Languages language = new DetectLanguage().determine(fullName);
+        Language language = new DetectLanguage().determine(fullName);
 
         String[] nameSplit = fullName.split(" ");
 

@@ -1,7 +1,6 @@
-import java.util.Map;
 import java.util.TreeMap;
 
-public class Russian extends Language{
+public class Russian extends LanguageBook {
 
     private TreeMap<String,Integer> russian = new TreeMap<>();
 
