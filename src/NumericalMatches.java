@@ -2,16 +2,9 @@ public class NumericalMatches implements FindNumericalMatches{
     private String fullName;
     public LanguageBook languageBook;
 
-    public NumericalMatches(String fullName,Language languageEnum) {
+    public NumericalMatches(String fullName,LanguageBook language) {
         this.fullName = fullName;
 
-        if (languageEnum.equals(Language.UKRAINIAN)){
-            languageBook = new Ukrainian();
-        } else if (languageEnum.equals(Language.RUSSIAN)){
-            languageBook = new Russian();
-        } else if (languageEnum.equals(Language.ENGLISH)){
-            languageBook = new English();
-        }
     }
 
 
@@ -24,6 +17,7 @@ public class NumericalMatches implements FindNumericalMatches{
 
         for (int i = 0; i < name.length(); i++){
             sum = sum + languageBook.alphabet(String.valueOf(name.charAt(i)));
+            System.out.println(sum);
         }
 
         return sum;

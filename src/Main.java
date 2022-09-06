@@ -27,8 +27,7 @@ public class Main {
             e.printStackTrace();
         }
 
-        Language language = new DetectLanguage().determine(fullName);
-
+        LanguageBook language = new DetectLanguage().determine(fullName);
         String[] nameSplit = fullName.split(" ");
 
 
