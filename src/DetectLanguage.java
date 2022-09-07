@@ -15,10 +15,10 @@ public class DetectLanguage {
             matcher = pattern.matcher(fullName);
 
             if (matcher.find()){
-                language = switch (i){
-                    case 0 -> new Ukrainian();
-                    case 1 -> new Russian();
-                    case 2 -> new English();
+                switch (i){
+                    case 0 -> language = new Ukrainian();
+                    case 1 -> language = new Russian();
+                    case 2 -> language = new English();
 
                     default ->
                         throw new IllegalStateException("Unexpected value: " + i);

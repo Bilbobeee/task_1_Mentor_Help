@@ -5,9 +5,6 @@ public class English extends LanguageBook {
 
     private TreeMap<Character,Integer> english = new TreeMap<>();
 
-    public English() {
-        System.out.println("Eng");
-    }
 
     {
         english.put('a',1);
@@ -41,7 +38,7 @@ public class English extends LanguageBook {
 
 
 @Override
-    public Integer alphabet(String letter){
+    public Integer alphabet(Character letter){
         return english.getOrDefault(letter,0);
     }
 

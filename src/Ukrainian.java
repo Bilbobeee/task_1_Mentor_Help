@@ -4,9 +4,6 @@ public class Ukrainian extends LanguageBook {
 
     private TreeMap<Character,Integer> ukrainian = new TreeMap<>();
 
-    public Ukrainian() {
-        System.out.println("Ukr");
-    }
 
     {
         ukrainian.put('а',1);
@@ -45,7 +42,7 @@ public class Ukrainian extends LanguageBook {
 
     }
 @Override
-    public Integer alphabet(String letter){
+    public Integer alphabet(Character letter){
         return ukrainian.getOrDefault(letter,0);
     }
 }

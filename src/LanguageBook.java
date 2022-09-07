@@ -1,6 +1,6 @@
 public class LanguageBook {
 
-    public Integer alphabet(String letters){
+    public Integer alphabet(Character letters){
         return null;
     }
 

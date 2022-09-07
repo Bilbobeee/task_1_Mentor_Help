@@ -4,7 +4,7 @@ public class NumericalMatches implements FindNumericalMatches{
 
     public NumericalMatches(String fullName,LanguageBook language) {
         this.fullName = fullName;
-
+        this.languageBook = language;
     }
 
 
@@ -16,8 +16,7 @@ public class NumericalMatches implements FindNumericalMatches{
         int sum = 0;
 
         for (int i = 0; i < name.length(); i++){
-            sum = sum + languageBook.alphabet(String.valueOf(name.charAt(i)));
-            System.out.println(sum);
+            sum = sum + languageBook.alphabet(name.charAt(i));
         }
 
         return sum;
