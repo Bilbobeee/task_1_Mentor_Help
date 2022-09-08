@@ -27,6 +27,10 @@ public class DetectLanguage {
             }
 
         }
+        if (language==null){
+            System.out.println("Введенный вами язык не зарегистрирован.");
+            System.exit(0);
+        }
 
         return language;
     }

@@ -1,8 +1,8 @@
-public class NumericalMatches implements FindNumericalMatches{
+public class calculateNumericalValue implements FindNumericalMatches{
     private String fullName;
     public LanguageBook languageBook;
 
-    public NumericalMatches(String fullName,LanguageBook language) {
+    public calculateNumericalValue(String fullName, LanguageBook language) {
         this.fullName = fullName;
         this.languageBook = language;
     }

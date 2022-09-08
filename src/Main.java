@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class Main {
 
@@ -19,19 +17,15 @@ public class Main {
     public static void start() {
 
         System.out.print("ФИО: ");
-        BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-        try{
-            fullName = input.readLine();
 
-        }catch (IOException e){
-            e.printStackTrace();
-        }
+        Scanner input = new Scanner(System.in);
+        fullName = input.nextLine();
 
         LanguageBook language = new DetectLanguage().determine(fullName);
         String[] nameSplit = fullName.split(" ");
 
 
-        NumericalMatches numericalMatches = new NumericalMatches(fullName,language);
+        calculateNumericalValue numericalMatches = new calculateNumericalValue(fullName,language);
         int doneSum = numericalMatches.calculation();
 
 
