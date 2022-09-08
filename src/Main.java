@@ -32,6 +32,7 @@ public class Main {
         System.out.println("Фамилия: " + nameSplit[0] + "\nИмя: " + nameSplit[1] + "\nОтчество: " + nameSplit[2]
         + "\nЧисловое соответствие: " + doneSum+"\n");
 
+
     }
 
 }

@@ -5,6 +5,7 @@ public class calculateNumericalValue implements FindNumericalMatches{
     public calculateNumericalValue(String fullName, LanguageBook language) {
         this.fullName = fullName;
         this.languageBook = language;
+
     }
 
 
