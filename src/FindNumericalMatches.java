@@ -1,5 +1,5 @@
 public interface FindNumericalMatches {
 
-    public abstract Integer calculation();
+    public abstract Integer calculateNumericalValue();
 
 }

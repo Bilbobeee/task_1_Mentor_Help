@@ -1,8 +1,8 @@
-public class calculateNumericalValue implements FindNumericalMatches{
+public class NumericalValue implements FindNumericalMatches{
     private String fullName;
     public LanguageBook languageBook;
 
-    public calculateNumericalValue(String fullName, LanguageBook language) {
+    public NumericalValue(String fullName, LanguageBook language) {
         this.fullName = fullName;
         this.languageBook = language;
 
@@ -10,7 +10,7 @@ public class calculateNumericalValue implements FindNumericalMatches{
 
 
     @Override
-    public Integer calculation() {
+    public Integer calculateNumericalValue() {
 
         String name = fullName.replaceAll(" ","").toLowerCase();
 

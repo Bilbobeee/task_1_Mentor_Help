@@ -25,8 +25,8 @@ public class Main {
         String[] nameSplit = fullName.split(" ");
 
 
-        calculateNumericalValue numericalMatches = new calculateNumericalValue(fullName,language);
-        int doneSum = numericalMatches.calculation();
+        NumericalValue numericalMatches = new NumericalValue(fullName,language);
+        int doneSum = numericalMatches.calculateNumericalValue();
 
 
         System.out.println("Фамилия: " + nameSplit[0] + "\nИмя: " + nameSplit[1] + "\nОтчество: " + nameSplit[2]
